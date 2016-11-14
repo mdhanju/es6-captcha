@@ -14,7 +14,7 @@ const getLineNoise = function(lv, width, height) {
         const mid2 = `${random.int((width / 2) - 25, (width / 2) + 25)} ${random.int(10, height - 10)}`;
         const color = random.greyColor();
         noiseString.push(`<path d="M${start} C${mid1},${mid2},${end}"
-			stroke="${color}" fill="transparent"/>`);
+            stroke="${color}" fill="transparent"/>`);
     }
 
     return noiseString.join('');
@@ -27,8 +27,9 @@ const getSVGOptions = function(height) {
     };
 };
 
-const getText = function(text, width, height) {
+const getText = function(text, width, height, options) {
     const len = text.length;
+    const charColor = options.color || 'black';
     const spacing = (width - 2) / (len + 1);
     let i = -1;
     const out = [];
@@ -39,8 +40,8 @@ const getText = function(text, width, height) {
         const spacePos = spacing * (i + 1);
         const transform = random.int(spacePos - 2, spacePos + 4);
         const color = random.greyColor(0, 4);
-        out.push(`<path fill="${color}" d="${charPath}"
-			transform="translate(${transform})"/>`);
+        out.push(`<path fill="${charColor}" d="${charPath}" stroke="${charColor}"
+            transform="translate(${transform})"/>`);
     }
 
     return out.join('');
@@ -59,9 +60,9 @@ const createCaptcha = function(options) {
     const lineNoise = getLineNoise(noiseLv, width, height);
     const textPath = getText(text, width, height, options);
     const xml = `<svg xmlns="http://www.w3.org/2000/svg"
-		width="${width}" height="${height}">
-			${textPath}
-		</svg>`;
+        width="${width}" height="${height}">
+            ${textPath}
+        </svg>`;
 
     return xml.replace(/[\t]/g, '').replace(/\n(\W)/g, '$1');
 };
