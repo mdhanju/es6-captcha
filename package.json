@@ -1,0 +1,32 @@
+{
+  "name": "es6-captcha",
+  "version": "1.0.0",
+  "description": "Simple captcha middleware for node.js",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdhanju/es6-captcha.git"
+  },
+  "keywords": [
+    "node.js",
+    "es6",
+    "captcha",
+    "svg"
+  ],
+  "author": "Maninder Dhanju <singhmaninder21@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mdhanju/es6-captcha/issues"
+  },
+  "homepage": "https://github.com/mdhanju/es6-captcha#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "opentype.js": "^0.6.6"
+  },
+  "devDependencies": {
+    "express": "^4.14.0"
+  }
+}
