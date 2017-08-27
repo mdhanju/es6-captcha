@@ -1,5 +1,5 @@
 {
-  "name": "es6-captcha",
+  "name": "es6captcha",
   "version": "1.0.1",
   "description": "Simple captcha middleware for node.js",
   "main": "src/index.js",
